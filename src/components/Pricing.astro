@@ -1,0 +1,20 @@
+---
+import PricingPlans from './PricingPlans.astro';
+import ComparisonTable from './ComparisonTable.astro';
+import Addons from './Addons.astro';
+import ExpertSupport from './ExpertSupport.astro';
+---
+
+<section id="pricing" class="pricing-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="text-3xl font-bold mb-3">الخطط والأسعار</h2>
+      <p class="text-lg text-gray-400">اختر الخطة المناسبة لاحتياجاتك</p>
+    </div>
+
+    <PricingPlans />
+    <ComparisonTable />
+    <Addons />
+    <ExpertSupport />
+  </div>
+</section>
