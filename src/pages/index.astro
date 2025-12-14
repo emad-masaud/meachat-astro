@@ -1,90 +1,73 @@
 ---
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Channels from '../components/Channels.astro';
+import Footer from '../components/Footer.astro';
+
 const title = 'MeaChat – AI Chatbot Automation Platform';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{title}</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						primary: '#FFB62F',
-						secondary: '#C400EB',
-						accent: '#FF4E4C',
-						alert: '#FF3C53',
-						dark: '#180C39'
-					}
-				}
-			}
-		}
-	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFB62F',
+            secondary: '#C400EB',
+            accent: '#FF4E4C',
+            alert: '#FF3C53',
+            dark: '#180C39'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Chat animation script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const messages = document.querySelectorAll('.chat-msg');
+      const baseDelay = 400;
+      const step = 700;
+      messages.forEach((msg, index) => {
+        const delay = baseDelay + index * step;
+        setTimeout(() => {
+          msg.classList.add('show');
+        }, delay);
+      });
+    });
+  </script>
 </head>
-<body>
-	<a href="#main" class="sr-only focus:not-sr-only">Skip to main content</a>
-	
-	<Header />
-	
-	<main id="main">
-		<!-- Hero Section -->
-		<section class="relative pt-32 pb-20 overflow-hidden hero-section-bg">
-			<div class="container mx-auto px-4 relative z-10">
-				<div class="flex flex-col lg:flex-row items-center">
-					<div class="w-full lg:w-1/2 mb-12 lg:mb-0">
-						<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-							MeaChat instantly supports your customers with
-							<span class="gradient-text">AI-generated responses</span>
-						</h1>
-						<p class="text-base md:text-lg text-gray-200 mb-4 max-w-xl">
-							Connect WhatsApp, Instagram, and your website. Answer FAQs, qualify leads, and keep conversations active 24/7.
-						</p>
-						<div class="flex flex-col sm:flex-row gap-3 mb-4">
-							<a href="#pricing" class="inline-flex justify-center items-center px-6 py-3 rounded-button bg-primary text-dark font-semibold">Start free trial</a>
-							<a href="#demo" class="inline-flex justify-center items-center px-6 py-3 rounded-button bg-transparent border border-primary text-primary font-semibold">See MeaChat in action</a>
-						</div>
-					</div>
-					<div class="w-full lg:w-1/2 flex justify-center">
-						<div class="max-w-md w-full p-4">
-							<p class="text-white text-center mb-4">AI-Powered Customer Engagement Demo</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Placeholder for other sections - Will be added as components -->
-		<section id="channels" class="py-20">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl font-bold mb-4">Connect all your <span class="gradient-text">messaging channels</span></h2>
-				<p class="text-gray-300 mb-8">WhatsApp, Instagram, Facebook, Telegram, and your website</p>
-			</div>
-		</section>
-
-		<section id="features" class="py-20 bg-[#1D1245]">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl font-bold mb-4">Powerful <span class="gradient-text">Features</span></h2>
-			</div>
-		</section>
-
-		<section id="pricing" class="py-20">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl font-bold mb-4">Start Free – <span class="gradient-text">Scale with Power</span></h2>
-			</div>
-		</section>
-	</main>
-
-	<script src="/assets/js/meachat.js"></script>
+<body class="bg-dark text-white">
+  <Header />
+  
+  <main>
+    <Hero />
+    <Channels />
+    <!-- More sections will be added here -->
+  </main>
+  
+  <Footer />
 </body>
 </html>
