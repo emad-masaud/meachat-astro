@@ -7,6 +7,7 @@ import Integrations from '../components/Integrations.astro';
 import Features from '../components/Features.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Pricing from '../components/Pricing.astro';
+import '../styles/global.css';
 
 const title = 'MeaChat – AI Chatbot Automation Platform';
 ---
@@ -24,45 +25,10 @@ const title = 'MeaChat – AI Chatbot Automation Platform';
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#FFB62F',
-            secondary: '#C400EB',
-            accent: '#FF4E4C',
-            alert: '#FF3C53',
-            dark: '#180C39'
-          },
-          borderRadius: {
-            'button': '8px'
-          }
-        }
-      }
-    }
-  </script>
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
   
   <!-- Chat animation script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const messages = document.querySelectorAll('.chat-msg');
-      const baseDelay = 400;
-      const step = 700;
-      messages.forEach((msg, index) => {
-        const delay = baseDelay + index * step;
-        setTimeout(() => {
-          msg.classList.add('show');
-        }, delay);
-      });
-    });
-  </script>
+  <script is:inline src="/assets/js/chat-animation.js"></script>
 </head>
 <body class="bg-dark text-white">
   <Header />
@@ -78,6 +44,4 @@ const title = 'MeaChat – AI Chatbot Automation Platform';
 
 </body>
 </html>
-  <Footer />
-</body>
-</html>
+
