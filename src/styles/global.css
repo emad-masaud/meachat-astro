@@ -15,6 +15,69 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+.chat-msg {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.chat-msg.show {
+  animation: chatFadeUp 0.45s ease-out forwards;
+}
+
+@keyframes chatFadeUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.chat-animate {
+  opacity: 0;
+  animation: chatFadeUp 0.6s ease-out 0.8s forwards;
+}
+
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #180C39;
+    color: white;
+}
+.gradient-text {
+    background: linear-gradient(90deg, #FFB62F, #FF4E4C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #C400EB 0%, #FF4E4C 100%);
+}
+.gradient-border {
+    position: relative;
+}
+.gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #FFB62F, #FF4E4C);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255, 182, 47, 0.8), rgba(255, 78, 76, 0) 70%);
+    pointer-events: none;
+    opacity: 0;
+    animation: float 15s infinite linear;
+}
+@keyframes float {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+}
+
 .chat-bubble {
     position: relative;
     padding: 12px 16px;
@@ -57,67 +120,231 @@
   );
 }
 
-.chat-msg {
-  opacity: 0;
-  transform: translateY(8px);
+
+.channel-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.chat-msg.show {
-  animation: chatFadeUp 0.45s ease-out forwards;
+.channel-card:hover {
+    transform: translateY(-5px);
 }
 
-.gradient-text {
-  background: linear-gradient(90deg, #FFB62F, #FF4E4C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.channel-card.whatsapp:hover {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+    border-color: #25D366;
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, #C400EB 0%, #FF4E4C 100%);
+.channel-card.messenger:hover {
+    box-shadow: 0 0 20px rgba(0, 132, 255, 0.5);
+    border-color: #0084FF;
 }
 
-.hero-section-bg {
-  background: url('/assets/img/hero-bg.jpeg') center center/cover no-repeat;
-  min-height: 600px;
+.channel-card.instagram:hover {
+    box-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
+    border-color: #E1306C;
 }
 
-.circle {
-  border-radius: 50%;
-  overflow: hidden;
+.channel-card.telegram:hover {
+    box-shadow: 0 0 20px rgba(0, 136, 204, 0.5);
+    border-color: #0088CC;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #180C39;
-  color: white;
+.channel-card.webchat:hover {
+    box-shadow: 0 0 20px rgba(255, 182, 47, 0.5);
+    border-color: #FFB62F;
 }
 
-/* Mobile menu styles */
+.integration-logo {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.integration-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.feature-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(255, 182, 47, 0.5);
+    box-shadow: 0 0 20px rgba(255, 182, 47, 0.2);
+}
+
+.pricing-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pricing-card.active {
+    border-color: #FFB62F;
+    box-shadow: 0 0 20px rgba(255, 182, 47, 0.2);
+}
+
+.pricing-card:hover:not(.active) {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pricing-period-btn {
+  color: #9ca3af; /* رمادي */
+  transition: color 150ms ease;
+}
+
+.pricing-period-btn.active {
+  color: #ffffff; /* أبيض */
+}
+
+.range-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #C400EB, #FF4E4C);
+    outline: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFB62F;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 182, 47, 0.5);
+}
+
+.range-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFB62F;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 182, 47, 0.5);
+    border: none;
+}
+
+.toggle-btn {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.toggle-btn::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(90deg, #C400EB, #FF4E4C);
+}
+
+.toggle-btn.active::after {
+    transform: translateX(24px);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.node {
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: move;
+    position: absolute;
+}
+
+.node-start {
+    background-color: #C400EB;
+    top: 20px;
+    left: 20px;
+}
+
+.node-message {
+    background-color: #FF4E4C;
+    top: 80px;
+    left: 70px;
+}
+
+.node-condition {
+    background-color: #FFB62F;
+    top: 140px;
+    left: 40px;
+}
+
+.connector {
+    position: absolute;
+    border-left: 2px dashed rgba(255, 255, 255, 0.5);
+    z-index: 0;
+}
+
+.connector-1 {
+    height: 40px;
+    top: 60px;
+    left: 60px;
+}
+
+.connector-2 {
+    height: 40px;
+    top: 120px;
+    left: 90px;
+}
+
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  height: 100vh;
-  background-color: #180C39;
-  z-index: 50;
-  transition: right 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  padding: 80px 24px 24px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #180C39;
+    z-index: 50;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px 24px;
 }
 
 .mobile-menu.active {
-  right: 0;
+    right: 0;
 }
 
 .hamburger {
-  width: 30px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
-  z-index: 60;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 60;
 }
 
 .hamburger span {
@@ -125,7 +352,8 @@ body {
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #FFFFFF;
+  /* theme-aware line color so hamburger stays visible in both themes */
+  background: var(--text-primary, #FFFFFF);
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -133,104 +361,782 @@ body {
   transition: .25s ease-in-out;
 }
 
-.hamburger span:nth-child(1) { top: 0px; }
-.hamburger span:nth-child(2), .hamburger span:nth-child(3) { top: 9px; }
-.hamburger span:nth-child(4) { top: 18px; }
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2), .hamburger span:nth-child(3) {
+    top: 9px;
+}
+
+.hamburger span:nth-child(4) {
+    top: 18px;
+}
 
 .hamburger.active span:nth-child(1) {
-  top: 9px;
-  width: 0%;
-  left: 50%;
+    top: 9px;
+    width: 0%;
+    left: 50%;
 }
 
 .hamburger.active span:nth-child(2) {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .hamburger.active span:nth-child(4) {
-  top: 9px;
-  width: 0%;
-  left: 50%;
+    top: 9px;
+    width: 0%;
+    left: 50%;
 }
 
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 40;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
 .overlay.active {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Channel cards */
-.channel-card {
+.hero-section-bg {
+    background: url('/assets/img/hero-bg.jpeg') center center/cover no-repeat;
+    min-height: 600px;
+}
+
+/* Custom checkbox */
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background: linear-gradient(135deg, #C400EB, #FF4E4C);
+    border: none;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Custom radio */
+.custom-radio {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radio-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+}
+
+.custom-radio:hover input ~ .radio-mark {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-radio input:checked ~ .radio-mark {
+    border: 2px solid #FFB62F;
+}
+
+.radio-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-radio input:checked ~ .radio-mark:after {
+    display: block;
+}
+
+.custom-radio .radio-mark:after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFB62F;
+}
+
+/* Disable number input arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* تحسين التوافق للخاصية appearance */
+button, input[type="button"], input[type="submit"], input[type="reset"], select {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/* معالجة تحذير vertical-align */
+img, svg, video, canvas, audio, iframe, embed, object {
+  vertical-align: middle;
+}
+
+.lh-1 {
+  line-height: 1.1;
+}
+.lh-1 br {
+  display: none;
+}
+.lh-1 span, .lh-1 small, .lh-1 {
+  display: block;
+  white-space: pre-line;
+}
+.lh-1 {
+  word-break: break-word;
+}
+.lh-1 {
+  /* إذا كان هناك أكثر من كلمة، ضع كل كلمة في سطر */
+}
+.lh-1:has(small), .lh-1:has(span) {
+  white-space: pre-line;
+}
+.lh-1 {
+  /* إذا كان هناك فراغ، افصل الكلمات */
+}
+.lh-1 {
+  /* حل عملي: استخدم جافاسكريبت لتقسيم النص */
+}
+
+/* ============================================
+   THEME TOGGLE STYLES - Dark/Light Mode
+   ============================================ */
+
+/* CSS Variables for Light and Dark Themes */
+:root {
+  --bg-primary: #180C39;
+  --bg-secondary: #241A4F;
+  --text-primary: #FFFFFF;
+  --text-secondary: #D1D5DB;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(24, 12, 57, 0.9);
+  --card-bg: #241A4F;
+  --input-bg: #180C39;
+}
+
+html.light-mode {
+  --bg-primary: #FAFBFC;
+  --bg-secondary: #F0F3F7;
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  --border-color: rgba(0, 0, 0, 0.06);
+  --header-bg: rgba(250, 251, 252, 0.99);
+  --card-bg: #FFFFFF;
+  --input-bg: #FFFFFF;
+}
+
+/* Apply theme variables to body and main elements */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background-color: var(--header-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Light mode adjustments for header */
+html.light-mode header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility: theme-aware border color
+   Use this on elements that should follow the theme's border color (var(--border-color)).
+   Applying this class won't add borders itself; it only sets the border-color so
+   it works with existing border width/side utilities like .border, .border-b, etc. */
+.border-theme {
+  border-color: var(--border-color) !important;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 182, 47, 0.1);
+  border: 1px solid rgba(255, 182, 47, 0.3);
+  color: #FFB62F;
+  cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 1rem;
+  position: relative;
 }
 
-.channel-card:hover {
-  transform: translateY(-5px);
-}
-
-.channel-card.whatsapp:hover {
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
-  border-color: #25D366;
-}
-
-.channel-card.messenger:hover {
-  box-shadow: 0 0 20px rgba(0, 132, 255, 0.5);
-  border-color: #0084FF;
-}
-
-.channel-card.instagram:hover {
-  box-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
-  border-color: #E1306C;
-}
-
-.channel-card.telegram:hover {
-  box-shadow: 0 0 20px rgba(0, 136, 204, 0.5);
-  border-color: #0088CC;
-}
-
-.channel-card.webchat:hover {
-  box-shadow: 0 0 20px rgba(255, 182, 47, 0.5);
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 182, 47, 0.2);
   border-color: #FFB62F;
+  transform: rotate(20deg);
 }
 
-/* Pricing cards */
-.pricing-card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+.theme-toggle-btn:active {
+  transform: scale(0.95);
 }
 
-.pricing-card:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+/* Icons inside toggle button */
+.theme-toggle-btn .sun-icon,
+.theme-toggle-btn .moon-icon {
+  position: absolute;
+  font-size: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* FAQ */
-.faq-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.theme-toggle-btn .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
 }
 
-.faq-answer {
-  max-height: 0;
+.theme-toggle-btn .moon-icon {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+
+/* When in light mode, swap icons */
+html.light-mode .theme-toggle-btn .sun-icon {
+  opacity: 0;
+  transform: rotate(180deg) scale(0.5);
+}
+
+html.light-mode .theme-toggle-btn .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Light mode text colors */
+html.light-mode {
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+}
+
+html.light-mode body {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+html.light-mode nav a {
+  color: var(--text-primary) !important;
+}
+
+html.light-mode nav a:hover {
+  color: #C400EB !important;
+}
+
+html.light-mode .text-white {
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+html.light-mode .text-gray-400 {
+  color: #718096 !important;
+}
+
+html.light-mode .bg-dark {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Make footer always dark regardless of theme and ensure good contrast */
+footer.always-dark {
+  background-color: #241A4F !important; /* dark purple card color */
+  color: #E6E6F0 !important;
+  border-top: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+footer.always-dark a {
+  color: #D1D5DB !important; /* slightly muted link color */
+}
+
+footer.always-dark a:hover,
+footer.always-dark a:focus {
+  color: #FFFFFF !important;
+}
+
+footer.always-dark .text-gray-400,
+footer.always-dark p,
+footer.always-dark li {
+  color: #CFCFE0 !important;
+}
+
+footer.always-dark .w-10.h-10,
+footer.always-dark .w-10.h-10.circle {
+  background-color: #241A4F !important;
+}
+
+/* Ensure the small social icons inside footer keep visible color */
+footer.always-dark .ri-twitter-x-fill,
+footer.always-dark .ri-linkedin-fill,
+footer.always-dark .ri-facebook-fill,
+footer.always-dark .ri-instagram-fill {
+  color: #FFB62F !important;
+}
+
+html.light-mode h1, 
+html.light-mode h2, 
+html.light-mode h3, 
+html.light-mode h4, 
+html.light-mode h5, 
+html.light-mode h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Light mode for hero section */
+html.light-mode .hero-section-bg {
+  background-color: var(--bg-secondary) !important;
+}
+
+html.light-mode .hero-section-bg::before {
+  background: linear-gradient(to bottom right, #F8F9FA, #FFFFFF) !important;
+}
+
+html.light-mode section {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Light mode for cards and sections */
+html.light-mode .channel-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .feature-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .pricing-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .faq-item {
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .faq-question {
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .faq-answer {
+  color: var(--text-secondary) !important;
+}
+
+/* Light mode for chat bubbles */
+html.light-mode .chat-bubble.user {
+  background-color: #E0E7FF !important;
+  color: #1A202C !important;
+}
+
+html.light-mode .chat-bubble.bot {
+  background: linear-gradient(135deg, #E9D5FF 0%, #FCE7F3 100%) !important;
+  color: #1A202C !important;
+}
+
+/* Light mode for buttons */
+html.light-mode .gradient-bg {
+  background: linear-gradient(135deg, #C400EB 0%, #FF4E4C 100%) !important;
+  color: white !important;
+}
+
+html.light-mode .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  color: var(--text-primary) !important;
+}
+
+html.light-mode .border-white\/20:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode for input and form elements */
+html.light-mode input,
+html.light-mode textarea,
+html.light-mode select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+/* Light mode for mobile menu */
+html.light-mode .mobile-menu {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+/* hero illustration rules removed per user request */
+
+html.light-mode .overlay {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light mode specific elements styling */
+html.light-mode .bg-\[\#241A4F\] {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.light-mode .bg-\[\#180C39\] {
+  background-color: #F0F0F5 !important;
+}
+
+html.light-mode [class*="bg-"][class*="gradient"] {
+  background: linear-gradient(135deg, #E0E7FF 0%, #F3E8FF 100%) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Light mode paragraph text */
+html.light-mode p {
+  color: var(--text-secondary) !important;
+}
+
+/* Light mode link styling */
+html.light-mode a {
+  color: #C400EB !important;
+}
+
+html.light-mode a:hover {
+  color: #FF4E4C !important;
+}
+
+/* ============================================
+   RTL / Arabic (Gulf) support — typography & layout
+   - Use when page is `lang="ar"` or `dir="rtl"` is set
+   - Adds Arabic-friendly font fallbacks, direction, and mirroring for
+     layout-sensitive controls (hamburger, nav, inputs).
+   ============================================ */
+
+html[lang="ar"], .lang-ar, [dir="rtl"] {
+  direction: rtl !important;
+  font-family: 'Cairo', 'Tajawal', 'Noto Kufi Arabic', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  text-align: right;
+}
+
+/* Headings and block-level elements in Arabic should align right */
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6 {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip layout-sensitive utilities for RTL where needed */
+[dir="rtl"] .hamburger span { left: auto; right: 0; }
+[dir="rtl"] .hamburger span:nth-child(1) { top: 0px; }
+[dir="rtl"] .hamburger span:nth-child(2), [dir="rtl"] .hamburger span:nth-child(3) { top: 9px; }
+[dir="rtl"] .hamburger span:nth-child(4) { top: 18px; }
+
+[dir="rtl"] .hamburger.active span:nth-child(1) {
+    top: 9px;
+    width: 0%;
+    right: 50%;
+}
+[dir="rtl"] .hamburger.active span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+[dir="rtl"] .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg);
+}
+[dir="rtl"] .hamburger.active span:nth-child(4) {
+    top: 9px;
+    width: 0%;
+    right: 50%;
+}
+
+/* Align nav and mobile menu for RTL */
+[dir="rtl"] nav, [dir="rtl"] .mobile-menu { text-align: right; }
+[dir="rtl"] nav a { float: none; display: inline-block; }
+
+/* Inputs and textareas should align right under RTL */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+/* Ensure circle utility remains visually centered in RTL contexts */
+[dir="rtl"] .circle { direction: ltr; }
+
+
+/* Accessibility: Reduce motion for theme toggle */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-btn,
+  body,
+  header {
+    transition: none;
+  }
+}
+
+/* ============================================
+   CIRCLE UTILITY
+   Make elements perfectly circular and responsive
+   Usage: add the `circle` class to any element with `rounded-full`.
+   ============================================ */
+.circle {
+  /* default size responsive to viewport */
+  --circle-size: clamp(36px, 6vmin, 80px);
+  width: var(--circle-size) !important;
+  aspect-ratio: 1 / 1;
+  height: auto !important; /* override explicit h-* classes */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
-.faq-item.active .faq-answer {
-  max-height: 500px;
+@media (min-width: 1024px) {
+  .circle { --circle-size: clamp(44px, 5.2vmin, 96px); }
+}
+@media (max-width: 480px) {
+  .circle { --circle-size: clamp(28px, 9vmin, 48px); }
+}
+
+/* Ensure images and svgs inside .circle fill the area and keep aspect */
+.circle img,
+.circle svg,
+.circle video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+/* ============================================
+   Improve contrast and preserve hero 'values' visibility in light mode
+   Targets common selectors used for hero stats/values (safe, non-destructive)
+   ============================================ */
+html.light-mode .hero-section-bg {
+  /* keep the background image but ensure a light tonal surface for overlaid stats */
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Hero statistic/value badges — increase contrast and ensure they are visible in light theme */
+.hero-values,
+.hero-stats,
+.hero-values .value,
+.hero-stat {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+html.light-mode .hero-values .value,
+html.light-mode .hero-stats .value,
+html.light-mode .hero-stat {
+  background-color: var(--card-bg) !important; /* white card on light */
+  color: var(--text-primary) !important;
+  padding: .5rem .75rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(16,24,40,0.04);
+  border: 1px solid var(--border-color) !important;
+  font-weight: 600;
+}
+
+/* Fallback for generic small badges inside hero */
+html.light-mode .hero-section-bg .badge,
+html.light-mode .hero-section-bg .value-badge {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  padding: .4rem .6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ============================================
+   Improve table and switch contrast in light mode
+   ============================================ */
+/* Make table cells more prominent in light mode */
+.overflow-x-auto table,
+.pricing-table,
+.pricing-card table {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+/* Table headings should be bolder and clearly visible */
+.overflow-x-auto table th,
+.overflow-x-auto table td {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+/* Toggle thumb contrast in light mode: ensure the knob is visible against light track */
+html.light-mode .toggle-btn::after {
+  background-color: var(--text-primary) !important; /* dark knob */
+  box-shadow: 0 1px 2px rgba(16,24,40,0.08) !important;
+}
+
+/* When active, keep the thumb visible (contrasting against gradient track) */
+html.light-mode .toggle-btn.active::after {
+  transform: translateX(24px) !important;
+  background-color: #FFFFFF !important; /* white thumb on colored active track for clarity */
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Ensure the toggle track has a subtle border in light mode to remain visible */
+html.light-mode .toggle-btn {
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Small utility: if any icon inside a .circle has been styled with border-radius removed elsewhere, enforce it */
+.circle > * { border-radius: 50% !important; }
+
+/* ============================================
+   Responsive table tweaks for small screens
+   Ensure the pricing/compare table has the same padding,
+   border and text colors as other cards in both themes.
+   ============================================ */
+@media (max-width: 768px) {
+  /* Give the scroll container some lateral padding on small screens */
+  .overflow-x-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Increase cell padding so rows match other stacked elements */
+  .overflow-x-auto table th,
+  .overflow-x-auto table td {
+    padding: 0.75rem 1rem !important;
+    white-space: normal;
+    text-align: left;
+  }
+
+  /* Make sure borders and backgrounds use theme variables */
+  .overflow-x-auto table {
+    border-color: var(--border-color) !important;
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .overflow-x-auto table th {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Improve table corner rounding on small screens */
+  .overflow-x-auto table thead th:first-child { border-top-left-radius: 12px; }
+  .overflow-x-auto table thead th:last-child { border-top-right-radius: 12px; }
+}
+
+/* Utility to keep small circular avatars/icons fixed size even on very small screens
+   Usage: add `no-shrink-48` to the element (works with existing .w-12 .h-12). */
+.no-shrink-48 {
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  flex: 0 0 48px !important; /* do not grow or shrink */
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+}
+.no-shrink-32 {
+  width: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+  flex: 0 0 32px !important; /* do not grow or shrink */
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Utility for integrations section: white background by default, original violet in dark mode */
+.bg-white.dark\:bg-\[\#1D1245\] {
+  background-color: #fff !important;
+}
+html.dark .bg-white.dark\:bg-\[\#1D1245\] {
+  background-color: #1D1245 !important;
 }

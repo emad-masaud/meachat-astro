@@ -5,16 +5,19 @@ import Addons from './Addons.astro';
 import ExpertSupport from './ExpertSupport.astro';
 ---
 
-<section id="pricing" class="pricing-section py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="text-3xl font-bold mb-3">الخطط والأسعار</h2>
-      <p class="text-lg text-gray-400">اختر الخطة المناسبة لاحتياجاتك</p>
+<section id="pricing" class="py-20 relative">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Start Free – <span class="gradient-text">Scale with Power</span>
+      </h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Flexible pricing that grows with you. Add credits as needed, or let experts handle everything.
+      </p>
     </div>
 
     <PricingPlans />
     <ComparisonTable />
-    <Addons />
-    <ExpertSupport />
-  </div>
-</section>
+
+
