@@ -1,18 +1,13 @@
 ---
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Channels from '../components/Channels.astro';
 import Footer from '../components/Footer.astro';
-import Integrations from '../components/Integrations.astro';
-import Features from '../components/Features.astro';
-import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
 import Addons from '../components/Addons.astro';
 import ExpertSupport from '../components/ExpertSupport.astro';
-import Faq from '../components/Faq.astro';
-import Cta from '../components/Cta.astro';
+import PricingHero from '../components/PricingHero.astro';
 import '../styles/global.css';
 
-const title = 'MeaChat – AI Chatbot Automation Platform';
+const title = 'Pricing – MeaChat';
 ---
 
 <!DOCTYPE html>
@@ -21,35 +16,30 @@ const title = 'MeaChat – AI Chatbot Automation Platform';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
-  
-  <!-- Chat animation script -->
-  <script is:inline src="/assets/js/chat-animation.js"></script>
 </head>
-<body class="text-white bg-dark">
+<body class="bg-dark text-white">
   <Header />
-  
-  <main>
-    <Hero />
-    <Channels />
-    <Integrations />
-    <Features />
-    <Testimonials />
-    <Addons />
-    <ExpertSupport />
-    <Cta />
-    <Faq />
-  </main>
-  
-  <Footer />
 
+  <main>
+    <PricingHero />
+    <section id="plans">
+      <Pricing />
+    </section>
+    <section id="addons">
+      <Addons />
+    </section>
+    <section id="expert-support">
+      <ExpertSupport />
+    </section>
+  </main>
+
+  <Footer />
 </body>
 </html>
-
