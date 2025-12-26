@@ -1,103 +1,143 @@
 <section class="py-20 bg-[#1D1245]">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="gradient-text">Flexible Add-ons</span></h2>
-      <p class="text-gray-300 max-w-2xl mx-auto">Recharge-style cards with unique branding for each add-on.</p>
+  <div class="container px-4 mx-auto">
+    <div class="mb-12 text-center">
+      <h2 class="mb-4 text-3xl font-bold md:text-4xl">
+        <span class="gradient-text">Flexible Add-ons</span>
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-300">
+        Buy what you need, when you need it. Available for all plans including Free.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Message Credits Card -->
-      <div class="group">
-        <div class="relative rounded-2xl p-[1px] bg-gradient-to-br from-[#25D366] via-[#C400EB] to-[#FFB62F] opacity-80 group-hover:opacity-100 transition-opacity">
-          <div class="rounded-2xl bg-[#241A4F] p-6">
-            <!-- brand stripe -->
-            <div class="h-10 rounded-lg bg-gradient-to-r from-[#4CAF50] to-[#25D366] flex items-center px-4 mb-5">
-              <i class="ri-message-2-fill text-white text-xl mr-2"></i>
-              <span class="text-white font-semibold">Message Credits</span>
+    <div class="grid max-w-4xl grid-cols-1 gap-6 mx-auto md:grid-cols-2">
+      <!-- Message Credits -->
+      <div class="addon-card bg-[#241A4F] border border-white/5 hover:border-primary/60 hover:-translate-y-1 hover:shadow-xl transition-all rounded-2xl p-6 md:p-8 flex flex-col gap-6">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center h-11 w-11 rounded-2xl bg-primary/10 text-primary">
+              <i class="text-2xl ri-message-2-fill"></i>
             </div>
-            <!-- value chips -->
-            <div class="grid grid-cols-2 gap-3 mb-5">
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">100K</span>
-                <span class="text-primary font-bold">$12</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">500K</span>
-                <span class="text-primary font-bold">$49</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">1M</span>
-                <span class="text-primary font-bold">$89</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">5M</span>
-                <span class="text-primary font-bold">$399</span>
-              </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight md:text-2xl">Message Credits</h3>
+              <p class="text-xs uppercase tracking-[0.18em] text-primary/70 font-semibold">
+                PAY-AS-YOU-GO
+              </p>
             </div>
-            <button class="w-full py-3 gradient-bg text-white rounded-button hover:opacity-90 transition-opacity">Top Up</button>
-            <p class="text-xs text-gray-500 mt-3">Credits valid 30–180 days by package.</p>
+          </div>
+          <span class="rounded-full bg-white/5 px-3 py-1 text-[11px] font-medium text-gray-200">
+            Add-on
+          </span>
+        </div>
+
+        <p class="text-sm leading-relaxed text-gray-300 md:text-base">
+          Top up your message balance anytime. Never worry about running out mid-campaign.
+        </p>
+
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">100K messages</span>
+              <span class="text-[11px] text-gray-400">≈ $0.00012 per message</span>
+            </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $12
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">500K messages</span>
+              <span class="text-[11px] text-gray-400">Best for growing broadcasts</span>
+            </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $49
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">1M messages</span>
+              <span class="text-[11px] text-gray-400">Best value for agencies</span>
+            </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $89
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">5M messages</span>
+              <span class="text-[11px] text-gray-400">High-volume / enterprise sends</span>
+            </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $399
+            </button>
           </div>
         </div>
+
+        <p class="mt-3 text-[11px] text-gray-500">
+          * Credits valid for 30–180 days depending on package
+        </p>
       </div>
 
-      <!-- AI Tokens Card -->
-      <div class="group">
-        <div class="relative rounded-2xl p-[1px] bg-gradient-to-br from-[#C400EB] via-[#3D2E6B] to-[#FFB62F] opacity-80 group-hover:opacity-100 transition-opacity">
-          <div class="rounded-2xl bg-[#241A4F] p-6">
-            <!-- brand stripe -->
-            <div class="h-10 rounded-lg bg-gradient-to-r from-[#7C4DFF] to-[#26C6DA] flex items-center px-4 mb-5">
-              <i class="ri-robot-fill text-white text-xl mr-2"></i>
-              <span class="text-white font-semibold">AI Tokens</span>
+      <!-- AI Tokens -->
+      <div class="addon-card bg-[#241A4F] border border-white/5 hover:border-primary/60 hover:-translate-y-1 hover:shadow-xl transition-all rounded-2xl p-6 md:p-8 flex flex-col gap-6">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center h-11 w-11 rounded-2xl bg-primary/10 text-primary">
+              <i class="text-2xl ri-robot-fill"></i>
             </div>
-            <!-- value chips -->
-            <div class="grid grid-cols-2 gap-3 mb-5">
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">5M</span>
-                <span class="text-primary font-bold">$9</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">20M</span>
-                <span class="text-primary font-bold">$29</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">100M</span>
-                <span class="text-primary font-bold">$119</span>
-              </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight md:text-2xl">AI Tokens</h3>
+              <p class="text-xs uppercase tracking-[0.18em] text-primary/70 font-semibold">
+                ONE-TIME PACKS
+              </p>
             </div>
-            <button class="w-full py-3 gradient-bg text-white rounded-button hover:opacity-90 transition-opacity">Top Up</button>
-            <p class="text-xs text-gray-500 mt-3">One-time purchase · No expiry.</p>
           </div>
+          <span class="rounded-full bg-emerald-400/10 text-emerald-300 px-3 py-1 text-[11px] font-medium">
+            No expiry
+          </span>
         </div>
-      </div>
 
-      <!-- Expert Support Card -->
-      <div class="group">
-        <div class="relative rounded-2xl p-[1px] bg-gradient-to-br from-[#FFB62F] via-[#C400EB] to-[#3D2E6B] opacity-80 group-hover:opacity-100 transition-opacity">
-          <div class="rounded-2xl bg-[#241A4F] p-6">
-            <!-- brand stripe -->
-            <div class="h-10 rounded-lg bg-gradient-to-r from-[#FFB62F] to-[#FF8F00] flex items-center px-4 mb-5">
-              <i class="ri-customer-service-2-fill text-white text-xl mr-2"></i>
-              <span class="text-white font-semibold">Expert Support</span>
+        <p class="text-sm leading-relaxed text-gray-300 md:text-base">
+          Power your AI chatbot. Available for all plans, even Free users.
+        </p>
+
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">5M tokens</span>
+              <span class="text-[11px] text-gray-400">Ideal for testing & POCs</span>
             </div>
-            <!-- value chips -->
-            <div class="grid grid-cols-2 gap-3 mb-5">
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">Setup Boost</span>
-                <span class="text-primary font-bold">$199</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">SLA Support</span>
-                <span class="text-primary font-bold">$299</span>
-              </div>
-              <div class="flex items-center justify-between bg-[#1A0F3A] rounded-xl px-4 py-3">
-                <span class="font-medium">Managed Flow</span>
-                <span class="text-primary font-bold">$499</span>
-              </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $9
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">20M tokens</span>
+              <span class="text-[11px] text-gray-400">Best for active bots</span>
             </div>
-            <button class="w-full py-3 gradient-bg text-white rounded-button hover:opacity-90 transition-opacity">Talk to Expert</button>
-            <p class="text-xs text-gray-500 mt-3">Tailored help for faster results.</p>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $29
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-[#1A0F3A] px-4 py-3">
+            <div class="flex flex-col">
+              <span class="text-sm font-medium">100M tokens</span>
+              <span class="text-[11px] text-gray-400">Agencies & large teams</span>
+            </div>
+            <button class="inline-flex items-center justify-center rounded-full bg-primary text-dark text-xs font-semibold px-4 py-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241A4F] transition">
+              $119
+            </button>
           </div>
         </div>
+
+        <p class="mt-3 text-[11px] text-gray-500">
+          * One-time purchase, no expiry on tokens
+        </p>
       </div>
     </div>
   </div>
