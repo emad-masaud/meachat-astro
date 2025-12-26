@@ -1,0 +1,88 @@
+# MeaChat Astro - Copilot Rules & Project Context
+
+## Project Overview
+You are working on **MeaChat** – a SaaS landing page built with **Astro + Tailwind CSS**.
+- **Product**: Omnichannel messaging automation platform (WhatsApp, Instagram, Messenger bots).
+- **Tech Stack**: Astro 5.x, Tailwind CSS 4.x, TypeScript, deployed on Cloudflare Workers.
+- **Main App**: https://app.meachat.com (external SaaS dashboard; do NOT modify).
+- **Repo Structure**:
+  - `src/pages/` → Astro pages (routing)
+  - `src/components/` → Reusable Astro components
+  - `src/styles/` → Global CSS/Tailwind config
+  - `public/` → Static assets (images, logos)
+
+---
+
+## Critical Project Rules
+
+### 1. External Links & CTAs
+- **ALL** login/signup/purchase buttons MUST link to: `https://app.meachat.com/login`
+- This includes:
+  - "Get started", "Start free", "Try now", "Login", "Sign in"
+  - Plan selection buttons ("Choose plan", "Upgrade", "Start with Growth")
+  - Add-on purchase buttons (Message Credits, AI Tokens)
+- **NEVER** create auth flows or payment forms in this repo – they live in the main app.
+
+### 2. Internationalization (i18n) & RTL
+- **Supported locales**: English (`en`) and Arabic (`ar`)
+- **Routes**:
+  - `/` → English homepage
+  - `/pricing` → English pricing page
+  - `/ar` → Arabic homepage (RTL)
+  - `/ar/pricing` → Arabic pricing page (RTL)
+- **RTL Requirements for Arabic**:
+  - Use `dir="rtl"` on `<html>` or layout wrapper
+  - Flip layout direction: `flex-row-reverse`, `text-right`, etc.
+  - Icons/arrows pointing left should mirror for RTL
+  - Font: Keep English font for Latin text, Arabic font for Arabic script
+- **Translation files** (if/when created):
+  - `src/i18n/en.ts` – English strings
+  - `src/i18n/ar.ts` – Arabic strings
+
+### 3. Pages & Content Strategy
+- **Homepage** (`/` and `/ar`):
+  - Hero, features, use-cases, integrations, social proof, CTA
+  - **DO NOT** include pricing tables, add-ons, or expert sections here
+  - Strong CTA linking to `/pricing` or `/ar/pricing`
+- **Pricing Page** (`/pricing` and `/ar/pricing`):
+  - Plans grid (Starter / Growth / Enterprise – demo content)
+  - Flexible Add-ons section (Message Credits + AI Tokens as recharge cards)
+  - Expert/onboarding CTA section
+  - FAQ (short, demo)
+- **Legal Pages** (demo placeholders):
+  - `/legal/privacy`, `/legal/terms`, `/legal/cookies`
+  - `/ar/legal/privacy`, `/ar/legal/terms`, `/ar/legal/cookies`
+  - Use placeholder text: "Demo content – final policy coming soon"
+
+### 4. Design System & Styling
+- **Brand Colors** (Tailwind config):
+  - Primary: `#A78BFA` (violet/purple – `primary` in config)
+  - Dark bg: `#060321`, `#151133`, `#241A4F` (nested sections)
+  - Accent green (for AI/tokens): `#22C55E`, `#10B981`
+  - Accent blue (for enterprise): `#0EA5E9`
+- **Typography**:
+  - Font family: System sans (or custom if defined in `@font-face`)
+  - Headings: Bold, `text-3xl` to `text-4xl` on desktop
+  - Body: `text-sm` to `text-base`, `text-gray-300`
+- **Components Style**:
+  - Rounded corners: `rounded-2xl` for cards, `rounded-full` for buttons
+  - Borders: `border border-white/10` or `border-primary/60` for highlights
+  - Shadows: `shadow-lg` for elevated cards
+  - Buttons:
+    - Primary: `bg-primary text-dark` (where `dark` is very dark purple/black)
+    - Secondary: `bg-white text-dark` or outlined
+    - Always `rounded-full` with `px-6 py-2.5` or similar padding
+
+### 5. Add-ons Section (Critical Design Pattern)
+- **Message Credits** and **AI Tokens** should display as **recharge cards** (like prepaid phone cards or gift cards).
+- **Card Design**:
+  - Horizontal layout, resembling a credit card or gift card.
+  - **Top-left**: MeaChat logo or brand icon (e.g., `MC` for Message Credits, `MT` for AI Tokens).
+  - **Top-right**: Package size and price (e.g., "100K messages", "$12").
+  - **Bottom**: Short description or card code (e.g., "MC • MSG • 100K").
+  - **Gradient backgrounds**:
+    - Message Credits: violet/blue gradient (`from-[#4338CA] via-[#312E81] to-[#111827]`)
+    - AI Tokens: green/teal gradient (`from-[#059669] via-[#065F46] to-[#020617]`)
+  - **Border**: Subtle `border border-white/10` or `border-emerald-300/40` for tokens
+  - **On Click**: Full card clickable or button inside linking to `https://app.meachat.com/login`
+- **Example Structure** (simplified):
