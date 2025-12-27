@@ -1,6 +1,19 @@
-<section id="addons"> <section class="py-20 bg-[#1D1245]"> <div class="container px-4 mx-auto"> <div class="mb-12 text-center"> <h2 class="mb-4 text-3xl font-bold md:text-4xl"> <span class="gradient-text">Flexible Add-ons</span> </h2> <p class="max-w-2xl mx-auto text-gray-300">
-Recharge cards for message credits and AI tokens. Available for all plans including Free.
-</p> </div> <div class="grid grid-cols-1 gap-8 mx-auto mb-6 max-w-7xl md:grid-cols-4"> <!-- 100K Messages Product --> <div class="bg-[#241A4F] rounded-2xl border border-primary/30 p-6 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex flex-col"> <!-- Card Design --> <div class="relative mb-6 gradient-text rounded-xl border border-primary/40 p-5 aspect-[1.586/1] flex flex-col justify-between shadow-lg"> <!-- Header --> <div class="flex items-start justify-between"> <div class="flex items-center gap-2"> <div class="flex items-center justify-center w-9 h-9 rounded-xl"> <img src="/assets/img/logo/meachat.svg" alt="MeaChat" class="object-contain w-7 h-7"> </div> <span class="text-xs font-medium tracking-wide uppercase text-white/85">
+---
+interface Props {
+  locale?: 'ar' | 'en';
+}
+
+const { locale = 'en' } = Astro.props;
+
+import { ar } from '../i18n/ar';
+import { en } from '../i18n/en';
+
+const t = locale === 'ar' ? ar : en;
+---
+
+<section id="addons" dir={locale === 'ar' ? 'rtl' : 'ltr'}> <section class="py-20 bg-[#1D1245]"> <div class="container px-4 mx-auto"> <div class="mb-12 text-center"> <h2 class="mb-4 text-3xl font-bold md:text-4xl"> <span class="gradient-text">{t.addons.title}</span> </h2> <p class="max-w-2xl mx-auto text-gray-300">
+{t.addons.description}
+</p> </div><div class="grid grid-cols-1 gap-8 mx-auto mb-6 max-w-7xl md:grid-cols-4"> <!-- 100K Messages Product --> <div class="bg-[#241A4F] rounded-2xl border border-primary/30 p-6 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex flex-col"> <!-- Card Design --> <div class="relative mb-6 gradient-text rounded-xl border border-primary/40 p-5 aspect-[1.586/1] flex flex-col justify-between shadow-lg"> <!-- Header --> <div class="flex items-start justify-between"> <div class="flex items-center gap-2"> <div class="flex items-center justify-center w-9 h-9 rounded-xl"> <img src="/assets/img/logo/meachat.svg" alt="MeaChat" class="object-contain w-7 h-7"> </div> <span class="text-xs font-medium tracking-wide uppercase text-white/85">
 Message Credits
 </span> </div> </div> <!-- Amount --> <div> <h2 class="text-2xl font-bold leading-tight text-white">
 100K Messages
