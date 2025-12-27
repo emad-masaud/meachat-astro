@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FFB62F',
-        secondary: '#C400EB',
-        accent: '#FF4E4C',
-        alert: '#FF3C53',
-        dark: '#180C39'
+        primary: '#A78BFA',
+        secondary: '#A78BFA',
+        accent: '#10B981',
+        alert: '#EF4444',
+        dark: '#060321'
       },
       borderRadius: {
         'button': '8px'
