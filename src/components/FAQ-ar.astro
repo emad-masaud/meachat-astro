@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    question: "ما هو ميشات؟",
+    answer: "ميشات هي منصة أتمتة الرسائل متعددة القنوات التي تساعد الشركات على إدارة المحادثات عبر واتساب وإنستغرام وماسنجر من لوحة تحكم موحدة."
+  },
+  {
+    question: "كيف تعمل أرصدة الرسائل؟",
+    answer: "أرصدة الرسائل هي باقات مدفوعة مسبقاً تتيح لك إرسال الرسائل عبر جميع القنوات. رصيد واحد = رسالة واحدة. الأرصدة صالحة لمدة 30 يوماً من الشراء وتعمل مع جميع القنوات المتصلة."
+  },
+  {
+    question: "ما هي رموز الذكاء الاصطناعي؟",
+    answer: "رموز الذكاء الاصطناعي تشغّل ميزات الدردشة الذكية. تتيح الردود التلقائية ومعالجة اللغة الطبيعية والتفاعلات الذكية مع العملاء. يتم استهلاك الرموز بناءً على تعقيد المحادثة."
+  },
+  {
+    question: "هل يمكنني الترقية أو التخفيض من خطتي؟",
+    answer: "نعم! يمكنك الترقية أو التخفيض من خطتك في أي وقت. تسري التغييرات فوراً، وسنحسب الفرق بشكل تناسبي."
+  },
+  {
+    question: "هل هناك تجربة مجانية؟",
+    answer: "نعم، نقدم تجربة مجانية لمدة 14 يوماً على خطة المبتدئين. لا حاجة لبطاقة ائتمان للبدء."
+  },
+  {
+    question: "ماذا يحدث عندما تنفد الأرصدة؟",
+    answer: "عندما تنخفض الأرصدة، ستتلقى إشعارات. يمكنك شراء أرصدة رسائل أو رموز ذكاء اصطناعي إضافية حسب الحاجة، أو الترقية إلى خطة أعلى."
+  }
+];
+---
+
+<section class="py-16 px-4" dir="rtl">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        الأسئلة الشائعة
+      </h2>
+      <p class="text-gray-400">
+        كل ما تحتاج معرفته عن ميشات
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-[#241A4F] rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 transition-all">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-white pl-4">
+              {faq.question}
+            </h3>
+            <svg 
+              class="w-5 h-5 text-primary transition-transform group-open:rotate-180" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-4 text-gray-300">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-gray-400 mb-4">
+        لا تزال لديك أسئلة؟
+      </p>
+      <a 
+        href="https://app.meachat.com/login" 
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-dark font-semibold hover:opacity-90 transition"
+      >
+        اتصل بالدعم
+        <i class="ri-arrow-left-line"></i>
+      </a>
+    </div>
+  </div>
+</section>
