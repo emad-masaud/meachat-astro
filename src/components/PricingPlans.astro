@@ -4,12 +4,12 @@
   <div class="max-w-4xl mx-auto mb-12">
       <div class="flex justify-center mb-8">
         <div class="bg-[#241A4F] rounded-full p-1 flex">
-          <button class="pricing-period-btn px-6 py-2 rounded-full text-gray-400 whitespace-nowrap" data-period="monthly">
+          <button class="px-6 py-2 text-gray-400 rounded-full pricing-period-btn whitespace-nowrap" data-period="monthly">
             Monthly
           </button>
-          <button class="pricing-period-btn px-6 py-2 rounded-full text-white whitespace-nowrap active" data-period="yearly">
+          <button class="px-6 py-2 text-white rounded-full pricing-period-btn whitespace-nowrap active" data-period="yearly">
             Yearly
-            <span class="ml-2 bg-primary bg-opacity-10 text-primary text-sm px-2 py-1 rounded-full">
+            <span class="px-2 py-1 ml-2 text-sm rounded-full bg-primary/20 text-primary">
               Save 20%
             </span>
           </button>
@@ -18,13 +18,13 @@
     </div>
 
     <!-- Pricing Cards Grid -->
-    <div id="pricing-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div id="pricing-cards" class="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3">
       
       <!-- Starter Plan -->
       <div class="pricing-card bg-[#241A4F] rounded-xl p-6 transition-transform transition-shadow hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-white/10">
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2">Starter</h3>
-          <p class="text-gray-400 text-sm">For small teams ready to scale.</p>
+          <h3 class="mb-2 text-xl font-semibold">Starter</h3>
+          <p class="text-sm text-gray-400">For small teams ready to scale.</p>
         </div>
         <div class="mb-6">
           <p class="text-3xl font-bold">
@@ -55,20 +55,20 @@
           <i class="ri-instagram-fill text-3xl text-[#E1306C]"></i>
           <i class="ri-telegram-fill text-3xl text-[#0088CC]"></i>
         </div>
-        <a href="https://app.meachat.com/login" class="block w-full py-3 gradient-bg text-white rounded-full text-center hover:opacity-90 transition-opacity whitespace-nowrap">
+        <a href="https://app.meachat.com/login" class="block w-full py-3 text-center text-white transition-opacity rounded-full gradient-bg hover:opacity-90 whitespace-nowrap">
           Choose Starter
         </a>
-        <p class="text-center my-4 text-sm">Best for early growth</p>
+        <p class="my-4 text-sm text-center">Best for early growth</p>
       </div>
 
       <!-- Professional Plan -->
       <div class="pricing-card bg-[#241A4F] rounded-xl border-2 border-primary p-6 relative transition-transform transition-shadow hover:-translate-y-1 hover:shadow-xl hover:ring-1 hover:ring-white/10">
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-dark px-4 py-1 rounded-full text-sm font-medium">
+        <div class="absolute px-4 py-1 text-sm font-medium transform -translate-x-1/2 rounded-full -top-3 left-1/2 bg-primary text-dark">
           Most Popular
         </div>
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2">Professional</h3>
-          <p class="text-gray-400 text-sm">For growing teams with AI needs.</p>
+          <h3 class="mb-2 text-xl font-semibold">Professional</h3>
+          <p class="text-sm text-gray-400">For growing teams with AI needs.</p>
         </div>
         <div class="mb-6">
           <p class="text-3xl font-bold">
@@ -104,17 +104,17 @@
           <i class="ri-telegram-fill text-3xl text-[#0088CC]"></i>
           <i class="ri-chat-smile-3-fill text-3xl text-[#a29bb5]"></i>
         </div>
-        <a href="https://app.meachat.com/login" class="block w-full py-3 gradient-bg text-white rounded-full text-center hover:opacity-90 transition-opacity whitespace-nowrap">
+        <a href="https://app.meachat.com/login" class="block w-full py-3 text-center text-white transition-opacity rounded-full gradient-bg hover:opacity-90 whitespace-nowrap">
           Go Professional
         </a>
-        <p class="text-center my-4 text-sm">AI + automation included</p>
+        <p class="my-4 text-sm text-center">AI + automation included</p>
       </div>
 
       <!-- Elite Plan -->
       <div class="pricing-card bg-[#241A4F] rounded-xl p-6 transition-transform transition-shadow hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-white/10">
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2">Elite</h3>
-          <p class="text-gray-400 text-sm">For high-volume operations.</p>
+          <h3 class="mb-2 text-xl font-semibold">Elite</h3>
+          <p class="text-sm text-gray-400">For high-volume operations.</p>
         </div>
         <div class="mb-6">
           <p class="text-3xl font-bold">Custom</p>
@@ -145,50 +145,14 @@
           <i class="ri-instagram-fill text-3xl text-[#E1306C]"></i>
           <i class="ri-telegram-fill text-3xl text-[#0088CC]"></i>
         </div>
-        <a href="https://app.meachat.com/login" class="block w-full py-3 gradient-bg text-white rounded-full text-center hover:opacity-90 transition-opacity whitespace-nowrap">
+        <a href="https://app.meachat.com/login" class="block w-full py-3 text-center text-white transition-opacity rounded-full gradient-bg hover:opacity-90 whitespace-nowrap">
          Let's Talk
         </a>
-        <p class="text-center my-4 text-sm">Enterprise-grade solution</p>
+        <p class="my-4 text-sm text-center">Enterprise-grade solution</p>
       </div>
     </div>
      <!-- Free Plan -->
-      <div class="pricing-card bg-[#241A4F] rounded-xl p-6 mt-8 max-w-6xl mx-auto transition-transform transition-shadow hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-white/10">
-        <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2">Free</h3>
-          <p class="text-gray-400 text-sm">Perfect to test with real customers.</p>
-        </div>
-        <div class="mb-6">
-          <p class="text-3xl font-bold">
-            $0<span class="text-sm font-normal text-gray-400">/month</span>
-          </p>
-          <p class="text-sm text-gray-400">Forever free</p>
-        </div>
-        <div class="mb-6">
-          <ul class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <li class="flex items-start">
-              <i class="ri-user-line text-primary mr-2 mt-0.5"></i>
-              <span class="text-sm">Up to 1K contacts</span>
-            </li>
-            <li class="flex items-start">
-              <i class="ri-message-2-line text-primary mr-2 mt-0.5"></i>
-              <span class="text-sm">1K messages/month</span>
-            </li>
-            <li class="flex items-start">
-              <i class="ri-shopping-bag-line text-primary mr-2 mt-0.5"></i>
-              <span class="text-sm">Buy credits as needed</span>
-            </li>
-          </ul>
-        </div>
-        <div class="flex justify-center gap-3 mb-6">
-          <i class="ri-whatsapp-fill text-3xl text-[#25D366]"></i>
-          <i class="ri-facebook-circle-fill text-3xl text-[#1877F3]"></i>
-          <i class="ri-instagram-fill text-3xl text-[#E1306C]"></i>
-          <i class="ri-telegram-fill text-3xl text-[#0088CC]"></i>
-        </div>
-        <a href="https://app.meachat.com/login" class="block w-full py-3 border border-white/20 text-white rounded-full text-center hover:bg-white/5 transition-colors whitespace-nowrap">
-          Start Free
-        </a>
-        <p class="text-center my-4 text-sm">Validate before upgrading</p>
-      </div>
-  </div>
+      <div class="flex-1 pricing-card bg-[#241A4F] rounded-xl p-6 mt-8 max-w-6xl mx-auto transition-transform transition-shadow hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-white/10"> <div class="mb-6"> <h3 class="mb-2 text-xl font-semibold">Free</h3> <p class="flex-1 text-sm text-gray-400">Forever free</p> <ul class="flex grid max-w-3xl grid-cols-1 gap-8 mx-auto md:grid-cols-3"> <li class="flex items-start"> <i class="ri-user-line text-primary mr-2 mt-0.5"></i> <span class="text-sm">Up to 1K contacts</span> </li> <li class="flex items-start"> <i class="ri-message-2-line text-primary mr-2 mt-0.5"></i> <span class="text-sm">1K messages/month</span> </li> <li class="flex items-start"> <i class="ri-shopping-bag-line text-primary mr-2 mt-0.5"></i> <span class="text-sm">Buy credits as needed</span> </li> </ul></div>   <div class="flex justify-center gap-3 mb-6"> <i class="ri-whatsapp-fill text-3xl text-[#25D366]"></i> <i class="ri-facebook-circle-fill text-3xl text-[#1877F3]"></i> <i class="ri-instagram-fill text-3xl text-[#E1306C]"></i> <i class="ri-telegram-fill text-3xl text-[#0088CC]"></i> </div> <a href="https://app.meachat.com/login" class="block w-full py-3 text-center text-white transition-colors border rounded-full border-white/20 hover:bg-white/5 whitespace-nowrap">
+Start Free
+</a> <p class="my-4 text-sm text-center">Validate before upgrading</p> </div>
 </section>
