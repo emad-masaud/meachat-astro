@@ -1,17 +1,9 @@
 ---
 import Header from '../../components/Header.astro';
-import Hero from '../../components/Hero.astro';
-import Channels from '../../components/Channels.astro';
 import Footer from '../../components/Footer.astro';
-import Integrations from '../../components/Integrations.astro';
-import Features from '../../components/Features.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import Cta from '../../components/Cta.astro';
-import Faq from '../../components/Faq.astro';
 import '../../styles/global.css';
-import { ar } from '../../i18n/ar';
 
-const title = ar.meta.title;
+const title = 'MeaChat – منصة أتمتة المحادثات بالذكاء الاصطناعي';
 ---
 
 <!DOCTYPE html>
@@ -24,20 +16,20 @@ const title = ar.meta.title;
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo/MeaChat-Light.svg">
+  <link rel="alternate icon" href="/assets/img/logo/MeaChat-Light@2x.png">
   
   <!-- Chat animation script -->
   <script is:inline src="/assets/js/chat-animation.js"></script>
   
   <style>
     body {
-      font-family: 'Tajawal', 'Inter', sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Cairo', sans-serif;
     }
   </style>
 </head>
@@ -45,13 +37,393 @@ const title = ar.meta.title;
   <Header />
   
   <main>
-    <Hero />
-    <Channels />
-    <Integrations />
-    <Features />
-    <Testimonials />
-    <Cta />
-    <Faq />
+    <!-- Hero Section - Arabic -->
+    <section class="relative pt-32 pb-20 overflow-hidden hero-section-bg">
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row-reverse items-center">
+          
+          <!-- النص -->
+          <div class="w-full lg:w-1/2 mb-12 lg:mb-0 text-right">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              MeaChat يدعم عملاءك فوراً مع<br>
+              <span class="gradient-text">ردود الذكاء الاصطناعي</span>
+            </h1>
+            <p class="text-base md:text-lg text-gray-200 mb-4 max-w-xl">
+              اربط واتساب، إنستغرام، وموقعك الإلكتروني. أجب على الأسئلة الشائعة، صنّف العملاء المحتملين، وحافظ على المحادثات نشطة 24/7 بدون إضافة موظفين.
+            </p>
+            <div class="flex flex-col sm:flex-row-reverse items-stretch sm:items-center gap-3 mb-4">
+              <a href="https://app.meachat.com/login" class="inline-flex justify-center items-center px-6 py-3 rounded-full bg-primary text-dark font-semibold hover:opacity-90 transition">
+                ابدأ تجربتك المجانية
+              </a>
+              <a href="https://app.meachat.com/login" class="inline-flex justify-center items-center px-6 py-3 rounded-full bg-transparent border border-primary text-primary font-semibold hover:bg-primary hover:text-dark transition">
+                شاهد MeaChat بالعمل
+              </a>
+            </div>
+            <p class="text-xs md:text-sm text-gray-300">
+              تجربة مجانية لمدة 14 يوم · لا حاجة لبطاقة ائتمانية
+            </p>
+          </div>
+
+          <!-- بطاقة المحادثة - العربية -->
+          <div class="w-full lg:w-1/2 flex justify-center">
+            <div class="max-w-md w-full p-4">
+              <div class="p-4 md:p-5 space-y-3">
+                <!-- صاحب المشروع -->
+                <div class="flex items-end justify-end chat-msg msg-1">
+                  <div class="chat-bubble user bg-white/10 text-white text-sm text-right">
+                    نستقبل رسائل كثيرة جداً على واتساب وإنستغرام كل يوم.<br>
+                    أحتاج البوت يرد عنا.
+                  </div>
+                  <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center mb-2 ml-3 circle">
+                    <img src="/assets/img/human-avatar.jpg" alt="صاحب المتجر" class="w-full h-full object-cover">
+                  </div>
+                </div>
+
+                <!-- رد MeaChat على صاحب المشروع -->
+                <div class="flex items-start chat-msg msg-2">
+                  <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-2 mr-3 circle">
+                    <i class="ri-robot-line text-dark text-lg"></i>
+                  </div>
+                  <div class="chat-bubble bot bg-primary text-dark text-sm text-right">
+                    MeaChat يرد 24/7 على واتساب، إنستغرام، وموقعك باستخدام أسئلتك الشائعة وسيناريوهاتك الخاصة.
+                  </div>
+                </div>
+
+                <!-- عميل نهائي -->
+                <div class="flex items-start justify-end chat-msg msg-3">
+                  <div class="chat-bubble user bg-white/10 text-white text-sm text-right">
+                    مرحباً، أريد الاستعلام عن حالة طلبي.
+                  </div>
+                  <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center mb-2 ml-3 circle">
+                    <img src="/assets/img/human-avatar.jpg" alt="عميل" class="w-full h-full object-cover">
+                  </div>
+                </div>
+
+                <!-- رد MeaChat على العميل -->
+                <div class="flex items-start chat-msg msg-4">
+                  <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-2 mr-3 circle">
+                    <i class="ri-robot-line text-dark text-lg"></i>
+                  </div>
+                  <div class="chat-bubble bot bg-primary text-dark text-sm text-right">
+                    طلبك في الطريق 🚚<br>
+                    التوصيل اليوم بين 4-6 مساءً.<br>
+                    اضغط 1 لتغيير الوقت أو 2 للتحدث مع موظف.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channels Section - Arabic -->
+    <section id="channels" class="py-20 bg-[#0A0628]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">قنوات متعددة</span> في منصة واحدة
+          </h2>
+          <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            وحّد جميع محادثاتك عبر واتساب، إنستغرام، ماسنجر، تيليجرام، وأكثر في صندوق وارد واحد.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+            <i class="ri-whatsapp-fill text-5xl text-[#25D366] mb-3"></i>
+            <h3 class="text-lg font-semibold">واتساب</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+            <i class="ri-instagram-fill text-5xl text-[#E4405F] mb-3"></i>
+            <h3 class="text-lg font-semibold">إنستغرام</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+            <i class="ri-messenger-fill text-5xl text-[#0084FF] mb-3"></i>
+            <h3 class="text-lg font-semibold">ماسنجر</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+            <i class="ri-telegram-fill text-5xl text-[#0088CC] mb-3"></i>
+            <h3 class="text-lg font-semibold">تيليجرام</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section - Arabic -->
+    <section id="features" class="py-20 bg-dark">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            لماذا تختار <span class="gradient-text">MeaChat</span>؟
+          </h2>
+          <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            كل ما تحتاجه لأتمتة محادثات عملائك وتحسين تجربتهم
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-robot-2-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">ذكاء اصطناعي متقدم</h3>
+            <p class="text-gray-300">
+              يفهم سياق المحادثات ويقدم ردود ذكية وشخصية لكل عميل بناءً على بياناتك.
+            </p>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-time-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">متاح 24/7</h3>
+            <p class="text-gray-300">
+              لا تفقد أي عميل. البوت يعمل على مدار الساعة ليرد على الاستفسارات حتى خارج أوقات العمل.
+            </p>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-flashlight-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">ردود فورية</h3>
+            <p class="text-gray-300">
+              أجب على العملاء في ثوانٍ. قلّل وقت الانتظار وحسّن رضا العملاء.
+            </p>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-settings-3-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">سهل التخصيص</h3>
+            <p class="text-gray-300">
+              صمم سيناريوهات المحادثة بدون برمجة. أضف أسئلتك وأجوبتك الخاصة بسهولة.
+            </p>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-line-chart-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">تحليلات مفصلة</h3>
+            <p class="text-gray-300">
+              تتبع أداء البوت، افهم عملاءك أكثر، وحسّن استراتيجيتك بناءً على البيانات.
+            </p>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8 hover:scale-105 transition-transform">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="ri-team-line text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">تحويل سلس للموظفين</h3>
+            <p class="text-gray-300">
+              البوت يحوّل المحادثات المعقدة لفريقك تلقائياً عند الحاجة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Section - Arabic -->
+    <section id="integrations" class="py-20 bg-[#0A0628]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">تكامل سلس</span> مع أدواتك المفضلة
+          </h2>
+          <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            اربط MeaChat مع منصات التجارة الإلكترونية وأنظمة CRM الخاصة بك
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center">
+            <div class="text-4xl mb-3">🛒</div>
+            <h3 class="text-base font-semibold">Shopify</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center">
+            <div class="text-4xl mb-3">🛍️</div>
+            <h3 class="text-base font-semibold">WooCommerce</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center">
+            <div class="text-4xl mb-3">📊</div>
+            <h3 class="text-base font-semibold">Google Sheets</h3>
+          </div>
+          
+          <div class="bg-[#241A4F] rounded-2xl p-6 flex flex-col items-center justify-center">
+            <div class="text-4xl mb-3">⚡</div>
+            <h3 class="text-base font-semibold">Zapier</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section - Arabic -->
+    <section class="py-20 bg-dark">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            ماذا يقول <span class="gradient-text">عملاؤنا</span>
+          </h2>
+          <p class="text-gray-300 text-lg">
+            آلاف الشركات تثق في MeaChat لأتمتة محادثاتها
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-[#241A4F] rounded-2xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400 text-xl">
+                ⭐⭐⭐⭐⭐
+              </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-right">
+              "MeaChat وفّر علينا وقت كثير! البوت يرد على 80% من الأسئلة تلقائياً."
+            </p>
+            <div class="flex items-center justify-end">
+              <div class="text-right mr-3">
+                <h4 class="font-semibold">أحمد السعيد</h4>
+                <p class="text-sm text-gray-400">صاحب متجر إلكتروني</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <span class="text-dark font-bold text-lg">أ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400 text-xl">
+                ⭐⭐⭐⭐⭐
+              </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-right">
+              "التكامل مع إنستغرام وواتساب سهل جداً. عملائنا سعداء بالردود السريعة."
+            </p>
+            <div class="flex items-center justify-end">
+              <div class="text-right mr-3">
+                <h4 class="font-semibold">سارة محمد</h4>
+                <p class="text-sm text-gray-400">مديرة تسويق</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <span class="text-dark font-bold text-lg">س</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#241A4F] rounded-2xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400 text-xl">
+                ⭐⭐⭐⭐⭐
+              </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-right">
+              "زادت مبيعاتنا 40% بعد استخدام MeaChat. البوت يحول الزوار إلى عملاء."
+            </p>
+            <div class="flex items-center justify-end">
+              <div class="text-right mr-3">
+                <h4 class="font-semibold">خالد العتيبي</h4>
+                <p class="text-sm text-gray-400">مدير مبيعات</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <span class="text-dark font-bold text-lg">خ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section - Arabic -->
+    <section class="py-20 bg-[#0A0628]">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          جاهز لأتمتة محادثات عملائك؟
+        </h2>
+        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          ابدأ تجربتك المجانية اليوم ولا تفقد أي عميل بعد الآن
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://app.meachat.com/login" class="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary text-dark font-bold text-lg hover:opacity-90 transition">
+            ابدأ الآن مجاناً
+          </a>
+          <a href="/ar/pricing" class="inline-flex justify-center items-center px-8 py-4 rounded-full bg-transparent border-2 border-primary text-primary font-bold text-lg hover:bg-primary hover:text-dark transition">
+            شاهد الأسعار
+          </a>
+        </div>
+        <p class="text-sm text-gray-400 mt-6">
+          تجربة مجانية 14 يوم · لا حاجة لبطاقة ائتمانية · إلغاء في أي وقت
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section - Arabic -->
+    <section id="faq" class="py-20 bg-dark">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">الأسئلة الشائعة</span>
+          </h2>
+          <p class="text-gray-300 text-lg">
+            إجابات لأكثر الأسئلة شيوعاً
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <details class="bg-[#241A4F] rounded-2xl p-6 cursor-pointer">
+            <summary class="font-semibold text-lg text-right">
+              كيف يعمل MeaChat؟
+            </summary>
+            <p class="text-gray-300 mt-4 text-right">
+              MeaChat يستخدم الذكاء الاصطناعي لفهم رسائل عملائك والرد عليها تلقائياً بناءً على الأسئلة الشائعة وسيناريوهات المحادثة التي تضيفها. يمكنك ربطه بواتساب وإنستغرام وموقعك بسهولة.
+            </p>
+          </details>
+
+          <details class="bg-[#241A4F] rounded-2xl p-6 cursor-pointer">
+            <summary class="font-semibold text-lg text-right">
+              هل أحتاج معرفة برمجية؟
+            </summary>
+            <p class="text-gray-300 mt-4 text-right">
+              لا على الإطلاق! MeaChat مصمم ليكون سهل الاستخدام بدون أي معرفة برمجية. يمكنك إعداد البوت وتخصيصه من خلال واجهة بسيطة وسحب وإفلات.
+            </p>
+          </details>
+
+          <details class="bg-[#241A4F] rounded-2xl p-6 cursor-pointer">
+            <summary class="font-semibold text-lg text-right">
+              هل يدعم اللغة العربية؟
+            </summary>
+            <p class="text-gray-300 mt-4 text-right">
+              نعم! MeaChat يدعم اللغة العربية بالكامل ويفهم سياق المحادثات باللغة العربية بشكل ممتاز.
+            </p>
+          </details>
+
+          <details class="bg-[#241A4F] rounded-2xl p-6 cursor-pointer">
+            <summary class="font-semibold text-lg text-right">
+              كم يكلف MeaChat؟
+            </summary>
+            <p class="text-gray-300 mt-4 text-right">
+              نقدم تجربة مجانية لمدة 14 يوم بدون الحاجة لبطاقة ائتمانية. بعدها تبدأ الباقات من أسعار مناسبة حسب حجم عملك. شاهد صفحة الأسعار للمزيد.
+            </p>
+          </details>
+
+          <details class="bg-[#241A4F] rounded-2xl p-6 cursor-pointer">
+            <summary class="font-semibold text-lg text-right">
+              ماذا يحدث إذا لم يعرف البوت الإجابة؟
+            </summary>
+            <p class="text-gray-300 mt-4 text-right">
+              البوت يحوّل المحادثة تلقائياً لأحد موظفيك إذا لم يجد إجابة مناسبة أو إذا طلب العميل التحدث مع موظف. أنت دائماً في السيطرة.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
   
   <Footer />

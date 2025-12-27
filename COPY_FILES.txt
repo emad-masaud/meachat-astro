@@ -1,0 +1,17 @@
+Please manually copy these files from worktree to main project:
+
+SOURCE: C:\Users\user\OneDrive\Documents\GitHub\meachat-astro.worktrees\worktree-2025-12-27T12-36-11
+TARGET: C:\Users\user\OneDrive\Documents\GitHub\meachat-astro
+
+Files to copy:
+1. src\components\Addons.astro
+2. src\components\Header.astro
+3. src\components\Footer.astro
+4. src\pages\terms.astro
+5. src\pages\privacy.astro
+6. src\pages\ar\*.astro (all Arabic pages)
+7. public\assets\img\logo\* (all logo files)
+
+Use Windows Explorer or run:
+xcopy "C:\Users\user\OneDrive\Documents\GitHub\meachat-astro.worktrees\worktree-2025-12-27T12-36-11\src" "C:\Users\user\OneDrive\Documents\GitHub\meachat-astro\src" /E /Y
+xcopy "C:\Users\user\OneDrive\Documents\GitHub\meachat-astro.worktrees\worktree-2025-12-27T12-36-11\public" "C:\Users\user\OneDrive\Documents\GitHub\meachat-astro\public" /E /Y

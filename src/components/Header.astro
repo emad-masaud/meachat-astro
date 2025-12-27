@@ -1,3 +1,18 @@
+---
+const currentPath = Astro.url.pathname;
+const isArabic = currentPath.startsWith('/ar');
+
+// Smart language switcher
+let alternatePath = '/';
+if (currentPath === '/' || currentPath === '/ar' || currentPath === '/ar/') {
+  alternatePath = isArabic ? '/' : '/ar';
+} else if (currentPath.startsWith('/ar/')) {
+  alternatePath = currentPath.replace('/ar/', '/');
+} else {
+  alternatePath = '/ar' + currentPath;
+}
+---
+
 <!-- Header Component -->
 <header class="fixed top-0 left-0 right-0 z-40 bg-dark bg-opacity-90 backdrop-blur-sm">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -16,7 +31,14 @@
       <a href="#faq" class="text-white hover:text-primary transition-colors">FAQ</a>
     </nav>
     
-    <div class="hidden md:block">
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language Switcher -->
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+        <a href={isArabic ? alternatePath : currentPath} class={`text-sm font-medium transition-colors px-2 ${!isArabic ? 'text-primary' : 'text-white hover:text-primary'}`}>EN</a>
+        <span class="text-gray-500 text-xs">|</span>
+        <a href={isArabic ? currentPath : alternatePath} class={`text-sm font-medium transition-colors px-2 ${isArabic ? 'text-primary' : 'text-white hover:text-primary'}`}>عربي</a>
+      </div>
+      
       <a href="https://app.meachat.com/login" class="gradient-bg text-white px-6 py-2.5 rounded-full font-medium hover:opacity-90 transition-opacity whitespace-nowrap">Try Free Forever</a>
     </div>
     
@@ -37,6 +59,14 @@
   <a href="#integrations" class="text-xl font-medium text-white mb-6">Integrations</a>
   <a href="/pricing" class="text-xl font-medium text-white mb-6">Pricing</a>
   <a href="#faq" class="text-xl font-medium text-white mb-6">FAQ</a>
+  
+  <!-- Language Switcher Mobile -->
+  <div class="flex items-center justify-center gap-3 my-6 px-4 py-2 rounded-full bg-white/5 border border-white/10 w-fit mx-auto">
+    <a href={isArabic ? alternatePath : currentPath} class={`text-base font-medium transition-colors px-3 ${!isArabic ? 'text-primary' : 'text-white hover:text-primary'}`}>English</a>
+    <span class="text-gray-500">|</span>
+    <a href={isArabic ? currentPath : alternatePath} class={`text-base font-medium transition-colors px-3 ${isArabic ? 'text-primary' : 'text-white hover:text-primary'}`}>عربي</a>
+  </div>
+  
   <a href="https://app.meachat.com/login" class="gradient-bg text-white px-6 py-3 rounded-full font-medium text-center mt-4 whitespace-nowrap">Try Free Forever</a>
 </div>
 
